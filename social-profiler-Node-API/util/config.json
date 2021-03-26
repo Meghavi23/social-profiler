@@ -1,0 +1,10 @@
+{
+    "development": {
+        "PORT": 3000,
+        "DB_NAME": "social_profiler",
+        "DB_USER_NAME": "root",
+        "DB_PASSWORD": "MeghDeep@2305",
+        "JWT_SECRET": "SECRET@2305",
+        "JWT_EXP": "3600"
+    }
+}

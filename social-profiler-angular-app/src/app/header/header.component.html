@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/">Social Profiler</a>
+  </span>
+  <span class="spacer"></span>
+  <div *ngIf="auth.user$ | async; then authenticated else guest">
+    <!-- template will replace this div -->
+  </div>
+
+  <ng-template #guest>
+    <a *ngIf="!userIsAuthenticated" mat-button routerLink="/login" routerLinkActive="mat-accent">Login</a>
+    <a *ngIf="!userIsAuthenticated" mat-button routerLink="/signup" routerLinkActive="mat-accent">Signup</a>
+    <button *ngIf="userIsAuthenticated" mat-button (click)="onLogout()">Logout</button>
+  </ng-template>
+
+  <ng-template #authenticated>
+
+    <button mat-button (click)="auth.signOut()">Logout</button>
+
+  </ng-template>
+
+</mat-toolbar>
